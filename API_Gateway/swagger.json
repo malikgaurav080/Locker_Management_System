@@ -1,0 +1,476 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Locker Management System",
+    "description": "Locker Management Microservice architecture",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Locker Management",
+      "description": "API for Locker Management in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/signin": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Signin for Already existing Account-Holder",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/signin"
+            }
+          }
+        }
+      }
+    },
+    "/users/signup": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "SignUp for a new Account-Holder",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/signup"
+            }
+          }
+        }
+      }
+    },
+    "/admin/signin": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Signin for Already existing Admin/Employee",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/signin"
+            }
+          }
+        }
+      }
+    },
+    "/admin/signup": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Signup for a new Admin with te help of already existing admin token",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/signup"
+            }
+          }
+        }
+      }
+    },
+    "/locker/User-details": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "User can get only own Locker details with the help of User token",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/details": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can get all Locker details with the help of admin token",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/details/:id": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can get a particular Locker details with the help of Locker Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/details-by-userId/:userId": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can get a particular User Locker details with the help of UserId",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/details-by-LockerNumber/:LockerNumber": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can get a particular User Locker details with the help of Locker Number",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/details-by-nameAndEmail/": {
+      "get": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can get a particular Locker User details with the help of User-Name and Email",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/update-locker/:id": {
+      "put": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can update the Locker details as per user request",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/add-locker": {
+      "post": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can create a locker for User",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/locker/delete-locker/:id": {
+      "delete": {
+        "tags": [
+          "Assigned-Locker"
+        ],
+        "summary": "Admin can delete a locker for User",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assigned-Locker"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType/": {
+      "get": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "get all Locker Type details from the system for admin",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType//": {
+      "post": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "Post a new Locker Type details from the system for admin",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType/:lockerid": {
+      "put": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "Admin can update the locker type details with the help of lockerid",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType/auto-inc/:lockerid": {
+      "put": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "This is an api that will be fetch from other API i.e. Assigned Locker. For increment the locker count as per there size, if admin will post new locker",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType/auto-dec/:lockerid": {
+      "put": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "This is an api that will be fetch from other API i.e. Assigned Locker. For Decrement the locker count as per there size, if admin will delete any locker",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    },
+    "/lockerType//:lockerid": {
+      "delete": {
+        "tags": [
+          "LockerType"
+        ],
+        "summary": "delete all the future investment plan details from the system for users who have successfully logged in",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LockerType"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "signup": {
+      "required": [
+        "username",
+        "password",
+        "email"
+      ],
+      "properties": {
+        "username": {
+          "type": "String",
+          "required": true
+        },
+        "password": {
+          "type": "String",
+          "required": true
+        },
+        "email": {
+          "type": "String",
+          "required": true
+        }
+      }
+    },
+    "signin": {
+      "required": [
+        "password",
+        "email"
+      ],
+      "properties": {
+        "password": {
+          "type": "String",
+          "required": true
+        },
+        "email": {
+          "type": "String",
+          "required": true
+        }
+      }
+    },
+    "Assigned-Locker": {
+      "required": [
+        "userId",
+        "FullName",
+        "Email",
+        "MobileNumber",
+        "CompleteAddress",
+        "Occupation",
+        "LockerSize",
+        "LockerNumber",
+        "KeyNumber",
+        "Instructions",
+        "NomineeName",
+        "Relationwithnominee",
+        "ValuableDetails",
+        "Status"    
+      ],
+      "properties": {
+        "FullName": {
+          "type": "String",
+          "required": true
+        },
+        "Email": {
+          "type": "String",
+          "required": true
+        },
+        "MobileNumber": {
+          "type": "Number",
+          "required": true
+        },
+        "UserId": {
+          "type": "mongoose.Schema.Types.ObjectId",
+          "required": true
+        },
+        "CompleteAddress": {
+          "type": "String",
+          "required": true
+        },
+        "LockerSize": {
+          "type": "String",
+          "required": true
+        },
+        "LockerNumber": {
+          "type": "Number",
+          "required": true
+        },
+        "KeyNumber": {
+          "type": "String",
+          "required": true
+        },
+        "Occupation": {
+          "type": "String",
+          "required": true
+        },
+        "Instructions": {
+          "type": "String",
+          "required": true
+        },
+        "NomineeName": {
+          "type": "String",
+          "required": true
+        },
+        "Relationwithnominee": {
+          "type": "String",
+          "required": true
+        },
+        "ValuableDetails": {
+          "type": "String",
+          "required": true
+        },
+        "Status": {
+          "type": "String",
+          "required": true
+        }
+      }
+    },
+    "LockerType": {
+      "required": [
+        "lockerid",
+        "LockerSize",
+        "Assigned",
+        "PriceOfLocker"
+      ],
+      "properties": {
+        "lockerid": {
+          "type": "Number",
+          "required": true
+        },
+        "LockerSize": {
+          "type": "String",
+          "required": true
+        },
+        "Assigned": {
+          "type": "Number",
+          "required": true
+        },
+        "PriceOfLocker": {
+          "type": "Number",
+          "required": true
+        }
+      }
+    }
+  }
+}

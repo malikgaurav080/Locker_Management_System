@@ -1,0 +1,719 @@
+{
+	"info": {
+		"_postman_id": "1c218a8f-06e6-4c4b-acf6-c5b527d92487",
+		"name": "API_GATEWAY_LOCKER_MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25288237"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User_Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"email\": \"gaurav.malik.7127@gmail.com\",\r\n    \"password\": \"Test@123\",\r\n    \"key1\": \"ground\",\r\n    \"key2\": \"student\",\r\n    \"key3\": \"books\",\r\n    \"key4\": \"class\",\r\n    \"key5\": \"game\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namitchintawar1@gmail.com\",\r\n    \"password\": \"Namit@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_Locker_Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdi5tYWxpay43MTI3QGdtYWlsLmNvbSIsImlkIjoiNjNjNGVlOWU4ODFmY2I2ZTQ2NWZkZGYwIiwiaWF0IjoxNjczODc3MDU2LCJleHAiOjE2NzM4Nzc5NTZ9.YuyxEsVKsy27awg5ilnPDOLnZsXbjKo4Sl3Rn1xi50g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Requ\": \"I want to open a locker account for size Medium\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/sendLockerRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"sendLockerRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdhdXJhdi5tYWxpay43MTI3QGdtYWlsLmNvbSIsImlkIjoiNjNjNGVlOWU4ODFmY2I2ZTQ2NWZkZGYwIiwiaWF0IjoxNjczODgxNzc2LCJleHAiOjE2NzM4ODI2NzZ9.iO8LCBkjJGR4Yzfv481uSMdwqfDnEiDK2J9NlySOybg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUserDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMDE5LCJleHAiOjE2NzM4ODI5MTl9.g81OVdSGdQdGvfuXEw3V1M1la_3nArmyx1t0IR9gDbY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"malikgaurav080@gmail.com\",\r\n    \"password\": \"11223344\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User_locker_Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"malik@123\",\r\n    \"Requ\": \"something else\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admin/requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin",
+								"requests"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assign_Locker",
+			"item": [
+				{
+					"name": "User_Role",
+					"item": [
+						{
+							"name": "GetMyDetails",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0Y2hpbnRhd2FyMUBnbWFpbC5jb20iLCJpZCI6IjYzYzRlZTUzODgxZmNiNmU0NjVmZGRkYyIsImlhdCI6MTY3Mzg4MjU2NiwiZXhwIjoxNjczODgzNDY2fQ.dhMOlruHoE-NHg94mS1ilspblwkBaCbfrBHb8Nky5No",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/User-details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"User-details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin_Roles",
+					"item": [
+						{
+							"name": "GetAllLockerDetails",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMjI0LCJleHAiOjE2NzM4ODMxMjR9.yfLJy2Zv82CPnKyC1HdjnDQEjoS0SICI-V9U3ESBiK4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLockerDetailsByLockerId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMjI0LCJleHAiOjE2NzM4ODMxMjR9.yfLJy2Zv82CPnKyC1HdjnDQEjoS0SICI-V9U3ESBiK4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/details/63c561c2fc611ea1f28fca7f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"details",
+										"63c561c2fc611ea1f28fca7f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLockerDetailsByUserId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMjI0LCJleHAiOjE2NzM4ODMxMjR9.yfLJy2Zv82CPnKyC1HdjnDQEjoS0SICI-V9U3ESBiK4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/details-by-userId/63c4ee53881fcb6e465fdddc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"details-by-userId",
+										"63c4ee53881fcb6e465fdddc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLockerDetailsByLockerNumber",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMjI0LCJleHAiOjE2NzM4ODMxMjR9.yfLJy2Zv82CPnKyC1HdjnDQEjoS0SICI-V9U3ESBiK4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/details-by-LockerNumber/8982344656",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"details-by-LockerNumber",
+										"8982344656"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetLockerByNameAndEmail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyMjI0LCJleHAiOjE2NzM4ODMxMjR9.yfLJy2Zv82CPnKyC1HdjnDQEjoS0SICI-V9U3ESBiK4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/details-by-nameAndEmail/?FullName=Namit&Email=namitchintawar1@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"details-by-nameAndEmail",
+										""
+									],
+									"query": [
+										{
+											"key": "FullName",
+											"value": "Namit"
+										},
+										{
+											"key": "Email",
+											"value": "namitchintawar1@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateLockerDetails",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Instructions\": \"Your status is active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/locker/update-locker/63ba632301efd29cfb654e0e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"update-locker",
+										"63ba632301efd29cfb654e0e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewLocker",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"63c4ee80881fcb6e465fdde6\",\r\n    \"FullName\": \"Karthik\",\r\n    \"Email\": \"katta.karthikmudhiraj512@gmail.com\",\r\n    \"MobileNumber\": 914447558962,\r\n    \"CompleteAddress\": \"Noida,dfgaarea UP\",\r\n    \"Occupation\": \"FullStackare Developer\",\r\n    \"LockerSize\": \"X-large\",\r\n    \"LockerNumber\": 898234564656,\r\n    \"Instructions\": \"NAN\",\r\n    \"NomineeName\": \"Divyans\",\r\n    \"Relationwithnominee\": \"Friend\",\r\n    \"ValuableDetails\": \"4 Diamond\",\r\n    \"Status\": \"Active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/locker/add-locker/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"add-locker",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteLocker",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/locker/delete-locker/63c565369de2c9000ff1d5db",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"locker",
+										"delete-locker",
+										"63c565369de2c9000ff1d5db"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Locker_Type",
+			"item": [
+				{
+					"name": "Admin_Role",
+					"item": [
+						{
+							"name": "GetLockerAssignedDetails",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbGlrZ2F1cmF2MDgwQGdtYWlsLmNvbSIsImlkIjoiNjNiODc4YTcwZjlmMmJjNmMyNzY4NzViIiwiaWF0IjoxNjczODgyNzk0LCJleHAiOjE2NzM4ODM2OTR9.wi2YuB9QGknj_2X5iwhE258R4zpZJTXuoTbOjaKnSi4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/lockerType/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lockerType",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewLockerType",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"lockerid\": 5,\r\n        \"sizeoflocker\": \"XX-large\",\r\n        \"priceoflocker\": 30000\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/lockerType/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lockerType",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update_LockerType_Details",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"sizeoflocker\": \"XXX-large\",\r\n        \"priceoflocker\": 30000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/lockerType/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lockerType",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_Locker_Type",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/lockerType/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"lockerType",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FETCH_ROLE",
+					"item": [
+						{
+							"name": "AutoInc_By_One_ON_LockerPost",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3004/lockerType/auto-inc/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"lockerType",
+										"auto-inc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AutoDec_By_One_ON_LockerDelete",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3004/lockerType/auto-dec/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"lockerType",
+										"auto-dec",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

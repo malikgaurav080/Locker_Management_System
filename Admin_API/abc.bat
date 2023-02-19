@@ -1,0 +1,1 @@
+sonar-scanner.bat -D"sonar.projectKey=Admin_API" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=sqp_a6618d57298ec14e8142696ab43b876a1513d317"
